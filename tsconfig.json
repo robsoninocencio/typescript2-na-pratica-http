@@ -4,5 +4,6 @@
     "module": "amd",
     "rootDir": "src",
     "outDir": "public/js"
-  }
+  },
+  "files": ["src/test.ts"]
 }

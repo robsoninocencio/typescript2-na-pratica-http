@@ -4,11 +4,15 @@
   "description": "Esse código foi utilizado para a criação do curso [Typescript na pratica com HTTP](https://www.schoolofnet.com/curso/frontend/typescript/typescript-na-pratica-com-http/) da School of Net.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tsc": "./node_modules/.bin/tsc -w",
+    "server": "./node_modules/.bin/live-server ./public",
+    "dev": "./node_modules/.bin/concurrently \"npm run tsc\" \"npm run server\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^6.2.0",
+    "live-server": "^1.2.1",
     "typescript": "^2.6.2"
   }
 }

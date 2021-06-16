@@ -8,6 +8,9 @@ Curso: https://www.schoolofnet.com/curso/frontend/typescript/typescript-na-prati
 
 Instrutor: Luiz Carlos Diniz
 
+Sites:
+https://github.com/kimmobrunfeldt/concurrently
+
 Comandos:
 
 ```
@@ -17,9 +20,16 @@ node_modules\.bin\tsc -w
 npm install -g live-server
 cd public
 live-server
+npm install concurrently --save-dev
+npm install live-server --save-dev
+npm run dev
 
 git init
 git add .
 git commit -m "Montando esqueleto da aplicação"
+git remote add origin git@github.com:robsoninocencio/typescript2-na-pratica-http.git
+git push -u origin main
+git add .
+git commit -m "Melhorando ambiente de desenvolvimento"
 
 ```
