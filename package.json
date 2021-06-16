@@ -1,0 +1,14 @@
+{
+  "name": "typescript2-na-pratica-http-pap",
+  "version": "1.0.0",
+  "description": "Esse código foi utilizado para a criação do curso [Typescript na pratica com HTTP](https://www.schoolofnet.com/curso/frontend/typescript/typescript-na-pratica-com-http/) da School of Net.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^2.6.2"
+  }
+}
