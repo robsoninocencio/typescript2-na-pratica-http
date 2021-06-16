@@ -10,6 +10,8 @@ Instrutor: Luiz Carlos Diniz
 
 Sites:
 https://github.com/kimmobrunfeldt/concurrently
+https://jsonplaceholder.typicode.com/
+https://jsonplaceholder.typicode.com/posts
 
 Comandos:
 
@@ -34,6 +36,9 @@ git commit -m "Melhorando ambiente de desenvolvimento"
 git push origin main
 git add .
 git commit -m "Configurando corretamente os sourcemaps"
+git push origin main
+git add .
+git commit -m "Como não organizar requisições AJAX"
 git push origin main
 
 ```

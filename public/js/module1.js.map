@@ -1,13 +1,1 @@
-{
-  "version": 3,
-  "file": "module1.js",
-  "sourceRoot": "",
-  "sources": [
-    "../../src/module1.ts"
-  ],
-  "names": [],
-  "mappings": "AAAA,KAAK,CAAC,aAAa,CAAC,CAAC",
-  "sourcesContent": [
-    "alert(\"Hello World\");\n"
-  ]
-}
+{"version":3,"file":"module1.js","sourceRoot":"","sources":["../../src/module1.ts"],"names":[],"mappings":"AAAA,KAAK,CAAC,aAAa,CAAC,CAAC","sourcesContent":["alert(\"Hello World\");\n"]}
