@@ -40,5 +40,8 @@ git push origin main
 git add .
 git commit -m "Como não organizar requisições AJAX"
 git push origin main
+git add .
+git commit -m "Criando classe para manipular AJAX"
+git push origin main
 
 ```

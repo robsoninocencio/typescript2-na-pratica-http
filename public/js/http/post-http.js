@@ -1,18 +1,13 @@
-define(["require", "exports"], function (require, exports) {
+define(["require", "exports", "./http"], function (require, exports, http_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var PostHttp = /** @class */ (function () {
         function PostHttp() {
+            this.url = "https://jsonplaceholder.typicode.com/posts";
+            this.http = new http_1.default();
         }
         PostHttp.prototype.query = function (calable) {
-            var xhttp = new XMLHttpRequest();
-            xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    calable(this.responseText);
-                }
-            };
-            xhttp.send();
+            this.http.get(this.url, calable);
         };
         PostHttp.prototype.save = function () { };
         return PostHttp;

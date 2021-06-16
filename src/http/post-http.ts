@@ -1,13 +1,14 @@
+import Http from "./http";
+
 export default class PostHttp {
+  private url = "https://jsonplaceholder.typicode.com/posts";
+  private http: Http;
+
+  constructor() {
+    this.http = new Http();
+  }
   query(calable) {
-    let xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        calable(this.responseText);
-      }
-    };
-    xhttp.send();
+    this.http.get(this.url, calable);
   }
 
   save() {}
