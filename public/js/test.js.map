@@ -1,0 +1,1 @@
+{"version":3,"file":"test.js","sourceRoot":"","sources":["../../src/test.ts"],"names":[],"mappings":";;;IACA,OAAO,CAAC,GAAG,CAAC,MAAM,CAAC,CAAC","sourcesContent":["import \"module1\";\nconsole.log(\"test\");\n"]}

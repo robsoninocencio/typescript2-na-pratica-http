@@ -31,5 +31,9 @@ git remote add origin git@github.com:robsoninocencio/typescript2-na-pratica-http
 git push -u origin main
 git add .
 git commit -m "Melhorando ambiente de desenvolvimento"
+git push origin main
+git add .
+git commit -m "Configurando corretamente os sourcemaps"
+git push origin main
 
 ```
