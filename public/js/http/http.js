@@ -1,4 +1,4 @@
-define(["require", "exports"], function (require, exports) {
+define(["require", "exports", "./response"], function (require, exports, response_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var HttpVerbs;
@@ -24,8 +24,11 @@ define(["require", "exports"], function (require, exports) {
         };
         Http.prototype.configureCallbacks = function (xhttp, resolve, reject) {
             xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    resolve(this.responseText); //tiver sucesso
+                if (this.readyState == 4) {
+                    var response = new response_1.default(this.responseText, this.status);
+                    if (this.status == 200) {
+                        resolve(response);
+                    }
                 }
                 // reject(this.responseText);
             };
