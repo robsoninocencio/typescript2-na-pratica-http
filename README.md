@@ -12,6 +12,7 @@ Sites:
 https://github.com/kimmobrunfeldt/concurrently
 https://jsonplaceholder.typicode.com/
 https://jsonplaceholder.typicode.com/posts
+https://github.com/DefinitelyTyped/DefinitelyTyped
 
 Comandos:
 
@@ -25,6 +26,8 @@ live-server
 npm install concurrently --save-dev
 npm install live-server --save-dev
 npm run dev
+
+npm install @types/es6-promise --save-dev
 
 git init
 git add .
@@ -43,5 +46,6 @@ git push origin main
 git add .
 git commit -m "Criando classe para manipular AJAX"
 git push origin main
+...
 
 ```

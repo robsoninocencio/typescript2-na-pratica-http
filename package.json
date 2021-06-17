@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/es6-promise": "^3.3.0",
     "concurrently": "^6.2.0",
     "live-server": "^1.2.1",
     "typescript": "^2.6.2"
