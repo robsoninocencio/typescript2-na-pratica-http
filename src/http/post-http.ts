@@ -7,8 +7,8 @@ export default class PostHttp {
   constructor() {
     this.http = new Http();
   }
-  query(calable) {
-    this.http.get(this.url, calable);
+  query() {
+    this.http.get(this.url);
   }
 
   save() {}

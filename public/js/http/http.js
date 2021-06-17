@@ -9,19 +9,26 @@ define(["require", "exports"], function (require, exports) {
     var Http = /** @class */ (function () {
         function Http() {
         }
-        Http.prototype.get = function (url, calable) {
-            var xhttp = this.createXhttp(HttpVerbs.GET, url);
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    calable(this.responseText);
-                }
-            };
-            xhttp.send();
+        Http.prototype.get = function (url) {
+            var _this = this;
+            var promise = new Promise(function (resolve, reject) {
+                var xhttp = _this.createXhttp(HttpVerbs.GET, url);
+                _this.configureCallbacks(xhttp, resolve, reject);
+                xhttp.send();
+            });
         };
         Http.prototype.createXhttp = function (verb, url) {
             var xhttp = new XMLHttpRequest();
             xhttp.open(verb, url, true);
             return xhttp;
+        };
+        Http.prototype.configureCallbacks = function (xhttp, resolve, reject) {
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    resolve(this.responseText); //tiver sucesso
+                }
+                // reject(this.responseText);
+            };
         };
         return Http;
     }());

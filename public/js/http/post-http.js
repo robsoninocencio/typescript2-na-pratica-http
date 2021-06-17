@@ -6,8 +6,8 @@ define(["require", "exports", "./http"], function (require, exports, http_1) {
             this.url = "https://jsonplaceholder.typicode.com/posts";
             this.http = new http_1.default();
         }
-        PostHttp.prototype.query = function (calable) {
-            this.http.get(this.url, calable);
+        PostHttp.prototype.query = function () {
+            this.http.get(this.url);
         };
         PostHttp.prototype.save = function () { };
         return PostHttp;
