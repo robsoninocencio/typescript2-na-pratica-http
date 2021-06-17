@@ -7,7 +7,9 @@ define(["require", "exports", "./http"], function (require, exports, http_1) {
             this.http = new http_1.default();
         }
         PostHttp.prototype.query = function () {
-            this.http.get(this.url);
+            this.http.get(this.url).then(function (responseText) {
+                console.log(JSON.parse(responseText));
+            });
         };
         PostHttp.prototype.save = function () { };
         return PostHttp;

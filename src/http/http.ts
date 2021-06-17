@@ -4,8 +4,8 @@ enum HttpVerbs {
 }
 
 export default class Http {
-  get(url: string) {
-    const promise = new Promise((resolve, reject) => {
+  get(url: string): Promise<any> {
+    return new Promise((resolve, reject) => {
       let xhttp = this.createXhttp(HttpVerbs.GET, url);
       this.configureCallbacks(xhttp, resolve, reject);
       xhttp.send();

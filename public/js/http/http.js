@@ -11,7 +11,7 @@ define(["require", "exports"], function (require, exports) {
         }
         Http.prototype.get = function (url) {
             var _this = this;
-            var promise = new Promise(function (resolve, reject) {
+            return new Promise(function (resolve, reject) {
                 var xhttp = _this.createXhttp(HttpVerbs.GET, url);
                 _this.configureCallbacks(xhttp, resolve, reject);
                 xhttp.send();

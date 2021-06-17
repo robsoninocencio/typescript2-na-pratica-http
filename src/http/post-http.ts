@@ -8,7 +8,9 @@ export default class PostHttp {
     this.http = new Http();
   }
   query() {
-    this.http.get(this.url);
+    this.http.get(this.url).then(function (responseText) {
+      console.log(JSON.parse(responseText);
+    });
   }
 
   save() {}
