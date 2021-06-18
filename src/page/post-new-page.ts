@@ -1,6 +1,8 @@
 import Page from "./page";
 import PostHttp from "../http/post-http";
 import Form from "../components/form";
+import ValidatorManager from "../components/validators/validator-manager";
+import Validators from "../components/validators/validators";
 
 export default class PostNewPage implements Page {
   constructor(private postHttp: PostHttp) {
@@ -17,7 +19,10 @@ export default class PostNewPage implements Page {
       });
   }
 
-  submit() {
+  submit(): void {
+    if (!this.isValid()) {
+      return;
+    }
     this.postHttp
       .save({
         title: Form.getValueFromField("#title"),
@@ -26,7 +31,21 @@ export default class PostNewPage implements Page {
       .then((obj) => this.goToPostList());
   }
 
-  isValid(): boolean {}
+  isValid(): boolean {
+    const validator = new ValidatorManager([
+      {
+        selectorField: "#title",
+        rules: [Validators.required],
+        messageInvalid: "Título inválido",
+      },
+      {
+        selectorField: "#body",
+        rules: [Validators.required],
+        messageInvalid: "Conteúdo inválido",
+      },
+    ]);
+    return validator.isValid();
+  }
 
   goToPostList(): void {
     window.location.href = "/post/post-list.html";

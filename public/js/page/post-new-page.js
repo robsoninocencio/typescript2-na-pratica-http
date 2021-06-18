@@ -1,4 +1,4 @@
-define(["require", "exports", "../http/post-http", "../components/form"], function (require, exports, post_http_1, form_1) {
+define(["require", "exports", "../http/post-http", "../components/form", "../components/validators/validator-manager", "../components/validators/validators"], function (require, exports, post_http_1, form_1, validator_manager_1, validators_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var PostNewPage = /** @class */ (function () {
@@ -18,6 +18,9 @@ define(["require", "exports", "../http/post-http", "../components/form"], functi
         };
         PostNewPage.prototype.submit = function () {
             var _this = this;
+            if (!this.isValid()) {
+                return;
+            }
             this.postHttp
                 .save({
                 title: form_1.default.getValueFromField("#title"),
@@ -25,7 +28,21 @@ define(["require", "exports", "../http/post-http", "../components/form"], functi
             })
                 .then(function (obj) { return _this.goToPostList(); });
         };
-        PostNewPage.prototype.isValid = function () { };
+        PostNewPage.prototype.isValid = function () {
+            var validator = new validator_manager_1.default([
+                {
+                    selectorField: "#title",
+                    rules: [validators_1.default.required],
+                    messageInvalid: "Título inválido",
+                },
+                {
+                    selectorField: "#body",
+                    rules: [validators_1.default.required],
+                    messageInvalid: "Conteúdo inválido",
+                },
+            ]);
+            return validator.isValid();
+        };
         PostNewPage.prototype.goToPostList = function () {
             window.location.href = "/post/post-list.html";
         };
