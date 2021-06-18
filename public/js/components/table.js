@@ -2,10 +2,10 @@ define(["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Table = /** @class */ (function () {
-        function Table(selector, _data, columns) {
+        function Table(selector, columns, _data) {
             this.selector = selector;
-            this._data = _data;
             this.columns = columns;
+            this._data = _data;
         }
         Table.prototype.createRows = function () {
             for (var _i = 0, _a = this._data; _i < _a.length; _i++) {
@@ -29,6 +29,13 @@ define(["require", "exports"], function (require, exports) {
         Table.prototype.make = function () {
             this.createRows();
         };
+        Object.defineProperty(Table.prototype, "data", {
+            set: function (value) {
+                this._data = value;
+            },
+            enumerable: true,
+            configurable: true
+        });
         return Table;
     }());
     exports.default = Table;

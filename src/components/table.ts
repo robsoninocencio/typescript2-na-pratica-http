@@ -1,8 +1,8 @@
 export default abstract class Table {
   constructor(
     private selector,
-    private _data: Array<any>,
-    private columns: Array<string>
+    private columns: Array<string>,
+    private _data?: Array<any>
   ) {}
 
   protected createRows() {
@@ -27,5 +27,9 @@ export default abstract class Table {
 
   make() {
     this.createRows();
+  }
+
+  set data(value) {
+    this._data = value;
   }
 }

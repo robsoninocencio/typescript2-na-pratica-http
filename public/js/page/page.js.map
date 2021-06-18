@@ -1,0 +1,1 @@
+{"version":3,"file":"page.js","sourceRoot":"","sources":["../../../src/page/page.ts"],"names":[],"mappings":"","sourcesContent":["export default interface Page {\n    init(): void;\n}"]}
