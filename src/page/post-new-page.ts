@@ -7,6 +7,13 @@ export default class PostNewPage implements Page {
   }
 
   init(): void {
+    this.postHttp
+      .save({
+        title: "title",
+        body: "body",
+      })
+      .then((obj) => console.log(obj));
+
     document
       .querySelector("#my-form")
       .addEventListener("submit", (event: Event) => {
@@ -20,3 +27,5 @@ export default class PostNewPage implements Page {
 
   isValid(): boolean {}
 }
+
+new PostNewPage(new PostHttp());

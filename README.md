@@ -13,6 +13,7 @@ https://github.com/kimmobrunfeldt/concurrently
 https://jsonplaceholder.typicode.com/
 https://jsonplaceholder.typicode.com/posts
 https://github.com/DefinitelyTyped/DefinitelyTyped
+https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
 
 Comandos:
 

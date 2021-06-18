@@ -17,6 +17,14 @@ define(["require", "exports", "./response"], function (require, exports, respons
                 xhttp.send();
             });
         };
+        Http.prototype.post = function (url, data) {
+            var _this = this;
+            return new Promise(function (resolve, reject) {
+                var xhttp = _this.createXhttp(HttpVerbs.POST, url);
+                _this.configureCallbacks(xhttp, resolve, reject);
+                xhttp.send(JSON.stringify(data));
+            });
+        };
         Http.prototype.createXhttp = function (verb, url) {
             var xhttp = new XMLHttpRequest();
             xhttp.open(verb, url, true);
@@ -26,7 +34,7 @@ define(["require", "exports", "./response"], function (require, exports, respons
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4) {
                     var response = new response_1.default(this.responseText, this.status);
-                    if (this.status == 200) {
+                    if (this.status.toString().startsWith("20")) {
                         resolve(response);
                     }
                 }

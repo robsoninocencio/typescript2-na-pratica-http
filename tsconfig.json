@@ -7,5 +7,9 @@
     "sourceMap": true,
     "inlineSources": true
   },
-  "files": ["src/test.ts", "src/page/post-list-page"]
+  "files": [
+    "src/test.ts",
+    "src/page/post-list-page",
+    "src/page/post-new-page.ts"
+  ]
 }

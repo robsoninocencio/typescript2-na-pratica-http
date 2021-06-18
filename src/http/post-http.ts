@@ -14,5 +14,9 @@ export default class PostHttp {
     });
   }
 
-  save() {}
+  save(data: { title: string; body: string }): Promise<object> {
+    return this.http.post(this.url, data).then(function (response: Response) {
+      return JSON.parse(response.body);
+    });
+  }
 }

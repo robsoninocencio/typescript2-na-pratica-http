@@ -11,7 +11,11 @@ define(["require", "exports", "./http"], function (require, exports, http_1) {
                 return JSON.parse(response.body);
             });
         };
-        PostHttp.prototype.save = function () { };
+        PostHttp.prototype.save = function (data) {
+            return this.http.post(this.url, data).then(function (response) {
+                return JSON.parse(response.body);
+            });
+        };
         return PostHttp;
     }());
     exports.default = PostHttp;
