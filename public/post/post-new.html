@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>TypeScript na prática</title>
+</head>
+<body>
+<h1>TypeScript na prática com Http</h1>
+<h3>Criar novo post</h3>
+<button id="my-button" type="button">Listar meus posts</button>
+<form id="my-form">
+    <input type="hidden" name="id">
+    <div class="form-group">
+        <label for="title">Título</label>
+        <input type="text" id="title" name="title" placeholder="Título">
+    </div>
+    <div class="form-group">
+        <label for="body">Conteúdo</label>
+        <textarea id="body" name="body"></textarea>
+    </div>
+    <button type="submit">Cadastrar</button>
+</form>
+<script>
+    var MODULE_INITIALIZER = 'page/post-new-page'
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>
