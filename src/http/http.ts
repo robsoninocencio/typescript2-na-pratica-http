@@ -33,10 +33,15 @@ export default class Http {
         const response = new Response(this.responseText, this.status);
         if (this.status.toString().startsWith("20")) {
           resolve(response);
+        } else {
+          if (
+            this.status.toString().startsWith("40") ||
+            this.status.toString().startsWith("50")
+          ) {
+            reject(response);
+          }
         }
       }
-
-      // reject(this.responseText);
     };
   }
 }

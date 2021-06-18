@@ -12,9 +12,14 @@ define(["require", "exports", "../http/post-http", "../components/post-table"], 
         };
         PostListPage.prototype.getPosts = function () {
             var _this = this;
-            this.postHttp.query().then(function (posts) {
+            this.postHttp
+                .query()
+                .then(function (posts) {
                 _this.postTable.data = posts;
                 _this.postTable.make();
+            })
+                .catch(function (response) {
+                console.log(response);
             });
         };
         return PostListPage;

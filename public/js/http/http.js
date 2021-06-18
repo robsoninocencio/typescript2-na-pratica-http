@@ -37,8 +37,13 @@ define(["require", "exports", "./response"], function (require, exports, respons
                     if (this.status.toString().startsWith("20")) {
                         resolve(response);
                     }
+                    else {
+                        if (this.status.toString().startsWith("40") ||
+                            this.status.toString().startsWith("50")) {
+                            reject(response);
+                        }
+                    }
                 }
-                // reject(this.responseText);
             };
         };
         return Http;
